@@ -1,74 +1,70 @@
-thon programming topics:
+#CALCULATOR WITH EMON VAW BY PYTHON
 
-Python Functions
-Python Function Arguments
-Python User-defined Functions
-Example: Simple Calculator by Using Functions
-import
-# Program make a simple calculator
+import os
+os.system("clear")
 
-# This function adds two numbers
-def add(x, y):
-    return x + y
+print("CALCULATE ANY SIMPLE NUMBER IN NUMERIC")
+print("""
+  ______    ______   __        ______   __    __  __         ______  ________   ______   _______  
+ /      \  /      \ |  \      /      \ |  \  |  \|  \       /      \|        \ /      \ |       \ 
+|  $$$$$$\|  $$$$$$\| $$     |  $$$$$$\| $$  | $$| $$      |  $$$$$$\\$$$$$$$$|  $$$$$$\| $$$$$$$\
+| $$   \$$| $$__| $$| $$     | $$   \$$| $$  | $$| $$      | $$__| $$  | $$   | $$  | $$| $$__| $$
+| $$      | $$    $$| $$     | $$      | $$  | $$| $$      | $$    $$  | $$   | $$  | $$| $$    $$
+| $$   __ | $$$$$$$$| $$     | $$   __ | $$  | $$| $$      | $$$$$$$$  | $$   | $$  | $$| $$$$$$$\
+| $$__/  \| $$  | $$| $$_____| $$__/  \| $$__/ $$| $$_____ | $$  | $$  | $$   | $$__/ $$| $$  | $$
+ \$$    $$| $$  | $$| $$     \\$$    $$ \$$    $$| $$     \| $$  | $$  | $$    \$$    $$| $$  | $$
+  \$$$$$$  \$$   \$$ \$$$$$$$$ \$$$$$$   \$$$$$$  \$$$$$$$$ \$$   \$$   \$$     \$$$$$$  \$$   \$$
+                                                                                                  
+                                                                                                  
+                         ================== Version 1==============""")
 
-# This function subtracts two numbers
-def subtract(x, y):
-    return x - y
+print("\033[96m  :::::::::::::: CALCULATOR BY EMON VAW.:::::::::::::\n")
 
-# This function multiplies two numbers
-def multiply(x, y):
-    return x * y
+def calculate():
+    operation = input('''
+Please type in the math operation you would like to complete:
+Type + for addition
+Type - for subtraction
+Type * for multiplication
+Type / for division
+''')
 
-# This function divides two numbers
-def divide(x, y):
-    return x / y
+    number_1 = int(input('Please enter the first number: '))
+    number_2 = int(input('Please enter the second number: '))
 
-def clr():
-    if os.name == "nt":
-        os.system("cls")
+    if operation == '+':
+        print('{} + {} = '.format(number_1, number_2))
+        print(number_1 + number_2)
+
+    elif operation == '-':
+        print('{} - {} = '.format(number_1, number_2))
+        print(number_1 - number_2)
+
+    elif operation == '*':
+        print('{} * {} = '.format(number_1, number_2))
+        print(number_1 * number_2)
+
+    elif operation == '/':
+        print('{} / {} = '.format(number_1, number_2))
+        print(number_1 / number_2)
+
     else:
-        os.system("clear")
+        print("\033[1;31;40m You have not typed a valid operator, please run the program again\n.")
 
+    # Add again() function to calculate() function
+    again()
 
-def bann_text():
-    clr()
-    logo = """
-   _____      _            _       _             
-  / ____|    | |          | |     | |            
- | |     __ _| | ___ _   _| | __ _| |_ ___  _ __ 
- | |    / _` | |/ __| | | | |/ _` | __/ _ \| '__|
- | |___| (_| | | (__| |_| | | (_| | || (_) | |   
-  \_____\__,_|_|\___|\__,_|_|\__,_|\__\___/|_|   
-                                                 
-                                         """        
+def again():
+    calc_again = input('''
+Do you want to calculate again?
+Please type Y for YES or N for NO.
+''')
 
-
-print("Select operation.")
-print("1.Add")
-print("2.Subtract")
-print("3.Multiply")
-print("4.Divide")
-
-while True:
-    # Take input from the user
-    choice = input("Enter choice(1/2/3/4): ")
-
-    # Check if choice is one of the four options
-    if choice in ('1', '2', '3', '4'):
-        num1 = float(input("Enter first number: "))
-        num2 = float(input("Enter second number: "))
-
-        if choice == '1':
-            print(num1, "+", num2, "=", add(num1, num2))
-
-        elif choice == '2':
-            print(num1, "-", num2, "=", subtract(num1, num2))
-
-        elif choice == '3':
-            print(num1, "*", num2, "=", multiply(num1, num2))
-
-        elif choice == '4':
-            print(num1, "/", num2, "=", divide(num1, num2))
-        break
+    if calc_again.upper() == 'Y':
+        calculate()
+    elif calc_again.upper() == 'N':
+      print("\033[2;37;40m THANKS FOR USING THIS CALCULATOR SEE YOU LATER, FOLLOW ME ON TWITTER: @AnonyminHack5\n")
     else:
-        print("Invalid Input")
+        again()
+
+calculate()
