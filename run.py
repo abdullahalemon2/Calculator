@@ -4,6 +4,7 @@ Python Functions
 Python Function Arguments
 Python User-defined Functions
 Example: Simple Calculator by Using Functions
+import
 # Program make a simple calculator
 
 # This function adds two numbers
